@@ -9,9 +9,13 @@ class CentralizedController(Controller):
     def __init__(self, env, central_agent):
         # initialize super class
         super().__init__(env)
+            self._isCentralized = True
 
         self.central_agent = central_agent
 
+    def isCentralizedd(self):
+        return self._isCentralized
+        
     def get_joint_action(self, observation):
         print ("Centralized controller - get joint action")
         """Returns the joint actions of all the agents
