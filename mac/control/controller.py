@@ -9,6 +9,8 @@ class Controller(ABC):
     def __init__(self, env):
         self.env = env
         self.agent_ids = self.env.get_env_agents()
+    def isCentralized(self):
+        pass
 
     def run(self, render=False, max_iteration=None):
         print("***************************")
@@ -80,7 +82,7 @@ class Controller(ABC):
         print(self.env)
         print("Calling env.step with paramater joint action:")
         print("joint_action")
-        return self.env.step(joint_action)
+        return self.env.step(joint_action,isCentralized)
 
     @abstractmethod
     def get_joint_action(self, observation):
