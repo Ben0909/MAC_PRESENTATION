@@ -13,7 +13,7 @@ class Controller(ABC):
         pass
 
     def run(self, render=False, max_iteration=None):
-        print("***************************"
+        print("***************************")
         print("Controller - run function")
         """Runs the controller on the environment given in the init,
         with the agents given in the init
