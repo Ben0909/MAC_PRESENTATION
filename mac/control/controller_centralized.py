@@ -9,7 +9,7 @@ class CentralizedController(Controller):
     def __init__(self, env, central_agent):
         # initialize super class
         super().__init__(env)
-            self._isCentralized = True
+        self._isCentralized = True
 
         self.central_agent = central_agent
 
