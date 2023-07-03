@@ -40,7 +40,7 @@ class Controller(ABC):
 
             # get actions for all agents and perform
             joint_action = self.get_joint_action(observation)
-            print("joint action:)
+            print("joint action:")
             print(joint_action)
             observation, reward, done, info = self.perform_joint_action(joint_action)
 
@@ -56,7 +56,7 @@ class Controller(ABC):
 
     def perform_joint_action(self, joint_action):
         print("*******************)
-        print("Controllet - perform_join_action")
+        print("Controller - perform_join_action")
         return self.env.step(joint_action)
 
     @abstractmethod
