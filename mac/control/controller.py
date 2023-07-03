@@ -22,7 +22,10 @@ class Controller(ABC):
         """
         done = False
         index = 0
+        print("going to getobservation from env.get_env().reset()")
         observation = self.env.get_env().reset()
+        print("observation recievd:")
+        print(observation)
         self.total_rewards = []
         while done is not True:
             index += 1
@@ -32,20 +35,36 @@ class Controller(ABC):
             # display environment
             if render:
                 self.env.render()
-
+            print("asserting observation is in dict form")
             # assert observation is in dict form
+            print("calling "env.observation_to_dict")
             observation = self.env.observation_to_dict(observation)
             print("observation as dict:")
             print(observation)
 
-            # get actions for all agents and perform
+            # get actions for all agents and perform.
+            print("calling get_join_action")
             joint_action = self.get_joint_action(observation)
+            print("back to run method")
             print("joint action:")
             print(joint_action)
+            print("calling self.perform_joint_action")
             observation, reward, done, info = self.perform_joint_action(joint_action)
+            print("back to run method")
+            print("new observation:")
+            print(observation)
+            print("new reward:")
+            print(reward)
+            print("done")
+            print(done)
+            print("info")
+            print(info)
 
             # save rewards
+            print("adding new reward to total rewards")
             self.total_rewards.append(reward)
+            print("new total reward:")
+            print(self.total_rewards)
 
             # check if all agents are done
             if all(done.values()):
@@ -57,6 +76,10 @@ class Controller(ABC):
     def perform_joint_action(self, joint_action):
         print("*******************")
         print("Controller - perform_join_action")
+        print("env:")
+        print(self.env)
+        print("Calling env.step with paramater joint action:")
+        print("joint_action")
         return self.env.step(joint_action)
 
     @abstractmethod
