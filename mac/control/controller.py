@@ -55,7 +55,7 @@ class Controller(ABC):
             self.env.render()
 
     def perform_joint_action(self, joint_action):
-        print("*******************)
+        print("*******************")
         print("Controller - perform_join_action")
         return self.env.step(joint_action)
 
