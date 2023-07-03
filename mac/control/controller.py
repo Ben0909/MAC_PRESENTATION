@@ -37,7 +37,7 @@ class Controller(ABC):
                 self.env.render()
             print("asserting observation is in dict form")
             # assert observation is in dict form
-            print("calling "env.observation_to_dict")
+            print("calling env.observation_to_dict")
             observation = self.env.observation_to_dict(observation)
             print("observation as dict:")
             print(observation)
