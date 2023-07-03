@@ -81,8 +81,15 @@ class Controller(ABC):
         print("env:")
         print(self.env)
         print("Calling env.step with paramater joint action:")
-        print("joint_action")
-        return self.env.step(joint_action,self._isCentralized)
+        print(joint_action)
+        print("is Centralized value:")
+        print(self._isCentralized)
+        print("Caliing env.step())
+        value_to_ret =  self.env.step(joint_action,self._isCentralized)
+        print("back to perform_joint_action")
+        print("value to return:")
+        print(value_to_ret)
+        return value_to_ret
 
     @abstractmethod
     def get_joint_action(self, observation):
