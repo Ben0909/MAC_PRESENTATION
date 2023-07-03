@@ -13,7 +13,7 @@ class Controller(ABC):
         pass
 
     def run(self, render=False, max_iteration=None):
-        print("***************************")
+        print("***************************"
         print("Controller - run function")
         """Runs the controller on the environment given in the init,
         with the agents given in the init
@@ -84,7 +84,7 @@ class Controller(ABC):
         print(joint_action)
         print("is Centralized value:")
         print(self._isCentralized)
-        print("Caliing env.step())
+        print("Caliing env.step()")
         value_to_ret =  self.env.step(joint_action,self._isCentralized)
         print("back to perform_joint_action")
         print("value to return:")
